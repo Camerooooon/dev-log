@@ -4,10 +4,11 @@ TIME=$(date +%F-%H:%M)
 echo Creating new entry for $TIME
 cd $LOGS_DIRECTORY
 touch $TIME.md
+echo "Log #$(ls | wc -l) | $TIME | T" > $TIME.md
 vim $TIME.md
 git add $TIME.md
 read -p "Commit and push to the internet?" -n 1 -r
-if [[ ! $REPLY =~ ^[Nn]$ ]]
+if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     exit 1
 fi
