@@ -11,7 +11,7 @@ echo $(expr "$(cat count)" + 1) > count
 COUNT="$(cat count)"
 
 echo "Log #$COUNT | $TIME | " >> $DATE.md
-v "+normal G$" +startinsert $DATE.md
+nvim "+normal G$" +startinsert $DATE.md
 
 read -p "Commit and push to the internet?" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
